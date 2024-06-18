@@ -36,12 +36,14 @@ export default async function Home() {
           <CreateTask/>
           {data == null ? 
             (
-              <Skeleton className="w-full h-[15rem] rounded-full" />
+              [1 ,2 ,3 ,4 ].map((ele) => (
+                <Skeleton key = {ele} className="w-full h-[15rem] rounded-full" />
+              ))
             ) : 
             (
               data.map((ele) => (
-                <Card className = "h-[15rem]">
-                    <Link key = {ele._id} href = {`/write/${ele._id}`} >
+                <Card key = {ele._id} className = "h-[15rem]">
+                    <Link  href = {`/write/${ele._id}`} >
                       <CardHeader>
                           <CardDescription>{format(ele.date , "dd EEE yyyy")}</CardDescription>
                           <CardTitle className = "text-[1.8rem] font-medium dark:text-stone-200">
