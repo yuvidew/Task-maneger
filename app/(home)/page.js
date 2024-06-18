@@ -37,7 +37,7 @@ export default async function Home() {
           {data == null ? 
             (
               [1 ,2 ,3 ,4 ].map((ele) => (
-                <Skeleton key = {ele} className="w-full h-[15rem] rounded-full" />
+                <Skeleton key = {ele} className="w-full h-[15rem] rounded-md" />
               ))
             ) : 
             (
